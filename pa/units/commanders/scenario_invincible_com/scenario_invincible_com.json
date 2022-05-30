@@ -1,0 +1,100 @@
+
+
+  {
+    "base_spec":"/pa/units/land/base_vehicle/base_vehicle.json",
+    "display_name":"scenario annihilation com(Only select with annihilation)",
+    "description":"scenario com ",
+    "si_name": "blank_blip",
+    "custom": true,
+    "add_to_spatial_db": false,
+    "attachable":{
+       "offsets":{
+          "root":[
+             0,
+             0,
+             0
+          ],
+          "head":[
+             0,
+             0,
+             15.6
+          ]
+       }
+    },
+    "model": {
+        "filename": "/pa/units/commanders/scenario_avatar/empty_unit.papa"
+        
+    },
+    "production": {
+        "energy": 0,
+        "metal": 0
+      },
+      "storage": {
+        "energy": 100,
+        "metal": 0
+      },
+      "guard_layer": "WL_Air",
+      "navigation": {
+          "type": "air",
+          "inter_planetary_type": "system",
+          "aggressive_distance": 50.0,
+          "acceleration": 80,
+          "brake": 80,
+          "move_speed": 75,
+          "turn_speed": 120,
+          "bank_factor": 10,
+          "vertical_speed": 45
+      },
+      "physics": {
+    "add_to_spatial_db": false,
+	"radius":0.05
+  },
+  "unit_types": [
+  
+    "UNITTYPE_Fabber",
+    "UNITTYPE_NoBuild",
+    "UNITTYPE_Mobile",
+    "UNITTYPE_Commander"
+ 
+
+],
+  "recon": {
+  
+    "observer": {
+        "items": [
+            {
+                "layer": "surface_and_air",
+                "channel": "radar",
+                "shape": "capsule",
+                "radius": 0
+            },
+            {
+                "layer": "orbital",
+                "channel": "sight",
+                "shape": "capsule",
+                "radius": 0
+            },
+            {
+                "layer": "underwater",
+                "channel": "sight",
+                "shape": "capsule",
+                "radius": 0
+            }
+        ]
+    }
+},
+    "scrolling_uv":{
+       "scroll_rate":-0.21,
+       "uv_split":0.9
+    },
+  
+   
+    "catalog_object_name":"TankAeson",
+    "client":{
+       "ui":{
+          "image":"/ui/main/shared/img/commanders/img_tank_aeson_broken.png",
+          "thumb_image":"/ui/main/shared/img/commanders/thumbs/img_tank_aeson_thumb_broken.png",
+          "profile_image":"/ui/main/shared/img/commanders/profiles/profile_tank_aeson_broken.png"
+       }
+    }
+ }

@@ -1,0 +1,140 @@
+/* color picker fix */
+
+.div-color-picker {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* commander picker colouring */
+  
+  .div-commander-picker-item.btn_std_ix.assimCommander {
+    color: rgb(255, 220, 220) !important;
+    border-color: #B200FF  !important;
+    background: rgba(100, 0, 100, 0.5) !important;
+  }
+  
+  .div-commander-picker-item.assimCommander.btn_std_ix:hover {
+    background: rgba(178, 0, 255, 0.5) !important;
+    border: 1px solid rgba(158, 0, 0, 0.1) !important;
+    box-shadow: 0 0 15px rgba(178, 0, 255, 0.8) !important;
+  }
+  
+  .div-commander-picker-item.assimCommander.btn_std_ix:active {
+    background: #B200FF  !important;
+    border: 1px solid #B200FF  !important;
+    box-shadow: 0 0 30px #B200FF  !important;
+  }
+  
+  /* assim commander outlines */
+  
+  .slot-player.assimSlot {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_assim.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.assimSlot.ready {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_assim.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.assimSlot.loading {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_assim.png")
+      0 17 53 17 !important;
+  }
+
+  .div-commander-picker-item {
+    background: rgba(0, 50, 70, 0.5) !important;
+    border: 1px solid rgba(0, 179, 255, 1) !important;
+  }
+  
+  .div-commander-picker-item.btn_std_ix:hover {
+    background: rgba(0, 179, 255, 0.75) !important;
+    border: 1px solid rgba(0, 179, 255, 0.1) !important;
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.8) !important;
+  }
+  
+  .div-commander-picker-item.btn_std_ix:active {
+    background: rgba(0, 179, 255, 1) !important;
+    border: 1px solid rgba(0, 179, 255, 1) !important;
+    box-shadow: 0 0 30px rgba(0, 179, 255, 1) !important;
+  }
+  
+  .div-commander-picker-item.btn_std_ix.bugsCommander {
+    color: rgb(255, 220, 220) !important;
+    border-color: #00ff00 !important;
+    background: rgba(0, 100, 0, 0.5) !important;
+  }
+  
+  .div-commander-picker-item.bugsCommander.btn_std_ix:hover {
+    background: rgba(0, 255, 0, 0.5) !important;
+    border: 1px solid rgba(158, 0, 0, 0.1) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8) !important;
+  }
+  
+  .div-commander-picker-item.bugsCommander.btn_std_ix:active {
+    background: rgba(0, 255, 0, 1) !important;
+    border: 1px solid rgba(0, 158, 0, 1) !important;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1) !important;
+  }
+  
+  /* bug commander outlines */
+  
+  .slot-player.bugsSlot {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_bug.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.bugsSlot.ready {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_bug.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.bugsSlot.loading {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_bug.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.mlaslot {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_mla.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.mlaslot.ready {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_mla.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.mlaslot.loading {
+    border-image: url("coui://ui/mods/commander_merge/img/ctrl_user_locked_mla.png")
+      0 17 53 17 !important;
+  }
+  
+  .slot-player.empty.ready {
+    border-image: url("coui://ui/main/game/new_game/img/ctrl_user_slot.png") 0 17
+      53 17 !important;
+  }
+  
+  .slot-player-commander {
+    border: 1px solid rgb(0, 179, 255) !important;
+  }
+  
+  .bugsSlot .slot-player-commander {
+    border: 1px solid #00ff00 !important;
+  }
+  
+  .bugsAlert {
+    margin: 0 20px 0 0 !important;
+    display: inline-block !important;
+    color: #00ff00 !important;
+    text-shadow: 0 0 40px #00ff00 !important;
+  }
+   .assimSlot .slot-player-commander {
+    border: 1px solid #B200FF  !important;
+  }
+  
+  .assimAlert {
+    margin: 0 20px 0 0 !important;
+    display: inline-block !important;
+    color: #B200FF  !important;
+    text-shadow: 0 0 40px #B200FF  !important;
+  }

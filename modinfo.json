@@ -1,0 +1,23 @@
+ {
+   "context": "server",
+   "identifier": "com.pa.ferretmaster.commander-merge",
+   "display_name": "Faction Commander Merging",
+   "description": "A mod that merges commanders for supported factions to allow hosting them together",
+   "author": "Ferretmaster",
+   "forum":"",
+   "version": "1.00",
+   "build": "115673",
+   "date": "2022-5-30",
+   "icon": "",
+   "signature": "not yet implemented",
+   "priority": 90,
+
+    "scenes": {
+        "new_game": [
+            "coui://ui/mods/commander_merge/new_game/commander-merge.js",
+            "coui://ui/mods/commander_merge/new_game/new_game.js"
+       
+        ]
+    },
+   "category": ["ui","titans", "in-game"]
+ }
