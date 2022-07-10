@@ -1,8 +1,12 @@
+var legionCommanders = ["/pa/units/commanders/l_overwatch/l_overwatch.json", "/pa/units/commanders/l_rockteeth/l_rockteeth.json", "/pa/units/commanders/l_cyclops/l_cyclops.json", "/pa/units/commanders/l_wasushi/l_wasushi.json"]
+var bugCommanders = ["/pa/units/commanders/bug_commander/bug_commander.json"]
 
 //matches mod identifiers with commanders to add to the list
 var modCommanders = {
-    "com.pa.ferretmaster.bugs":["/pa/units/commanders/bug_commander/bug_commander.json"],
-    "com.pa.legion-expansion-server":["/pa/units/commanders/l_overwatch/l_overwatch.json", "/pa/units/commanders/l_rockteeth/l_rockteeth.json", "/pa/units/commanders/l_cyclops/l_cyclops.json", "/pa/units/commanders/l_wasushi/l_wasushi.json"],
+    "com.pa.ferretmaster.bugs": bugCommanders,
+    "com.pa.ferretmaster.bugs-dev": bugCommanders,
+    "com.pa.legion-expansion-server": legionCommanders,
+    "com.pa.legion-expansion-server-dev": legionCommanders,
     "com.pa.assimilation-expansion-server": ["/pa/units/assimilation/commanders/a_not_armalisk/a_not_armalisk.json","/pa/units/assimilation/commanders/a_quad_donut_duke/a_quad_donut_duke.json"],
     "com.pa.ferretmaster.scenario-server-local":["/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json","/pa/units/commanders/scenario_invincible_com/scenario_invincible_com.json"],
     "com.pa.ferretmaster.scenario-server":["/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json"]
