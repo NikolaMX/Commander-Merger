@@ -57,10 +57,3 @@ legion.commanders = [
     "data-bind",
     "css: {bugsSlot: !$data.isEmpty() && model.isBugs($data.commander()),assimSlot: !$data.isEmpty() && model.isAssim($data.commander()), mlaslot: !$data.isEmpty() && !model.isCustomFaction($data.commander()),legionslot: !$data.isEmpty() && model.isLegion($data.commander()), ready: isReady, loading: isLoading}"
   );
-
-  _.defer(function () {
-    model.localChatMessage(
-      loc("Bug Faction"),
-      loc("To play as the Bugs select one of the green Commanders.")
-    );
-  });

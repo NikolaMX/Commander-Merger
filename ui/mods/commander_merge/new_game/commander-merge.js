@@ -40,6 +40,7 @@ modsPromise.then(function(result){ // setting which commanders to add
   var commandersToKeep = [];
   for(modIndex in result){
     var modObject =  result[modIndex];
+    if(modObject.identifier = "com.pa.ferretmaster.bugs"){ model.localChatMessage(loc("Bug Faction"),loc("To play as the Bugs select one of the green Commanders."));}
     if(modCommanders[modObject.identifier] !== undefined){
       commandersToKeep = commandersToKeep.concat(modCommanders[modObject.identifier]);
     }
