@@ -38,13 +38,16 @@ var modsPromise = api.mods.getMounted("server",true)// grabbing the list of moun
 
 modsPromise.then(function(result){ // setting which commanders to add
   var commandersToKeep = [];
+  var bugsEnabled = false;
   for(modIndex in result){
     var modObject =  result[modIndex];
-    if(modObject.identifier = "com.pa.ferretmaster.bugs"){ model.localChatMessage(loc("Bug Faction"),loc("To play as the Bugs select one of the green Commanders."));}
+    if(modObject.identifier == "com.pa.ferretmaster.bugs" || modObject.identifier == "com.pa.ferretmaster.bugs-dev"){bugsEnabled = true}
+    console.log(modObject.identifier)
     if(modCommanders[modObject.identifier] !== undefined){
       commandersToKeep = commandersToKeep.concat(modCommanders[modObject.identifier]);
     }
   }
+  if(bugsEnabled){model.localChatMessage(loc("Bug Faction"),loc("To play as the Bugs select one of the green Commanders."))}
   commandersToRemove = _.difference(commandersToRemove,commandersToKeep);
   for(comIndex in commandersToRemove){
     var commanderImage = commanderImageMap[commandersToRemove[comIndex]];
