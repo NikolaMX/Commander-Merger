@@ -1,4 +1,9 @@
-var legionCommanders = ["/pa/units/commanders/l_overwatch/l_overwatch.json", "/pa/units/commanders/l_rockteeth/l_rockteeth.json", "/pa/units/commanders/l_cyclops/l_cyclops.json", "/pa/units/commanders/l_wasushi/l_wasushi.json"]
+var legionCommanders = [  "/pa/units/commanders/l_overwatch/l_overwatch.json",
+"/pa/units/commanders/l_cyclops/l_cyclops.json",
+"/pa/units/commanders/l_cataphract/l_cataphract.json",
+"/pa/units/commanders/l_raptor/l_raptor.json",
+"/pa/units/commanders/l_quad/l_quad.json",
+"/pa/units/commanders/l_tank/l_tank.json"]
 var bugCommanders = ["/pa/units/commanders/bug_commander/bug_commander.json"]
 
 //matches mod identifiers with commanders to add to the list
@@ -13,10 +18,12 @@ var modCommanders = {
 }
 
 commandersToRemove = ["/pa/units/commanders/bug_commander/bug_commander.json",
-  "/pa/units/commanders/l_overwatch/l_overwatch.json",
-  "/pa/units/commanders/l_rockteeth/l_rockteeth.json", 
-  "/pa/units/commanders/l_cyclops/l_cyclops.json", 
-  "/pa/units/commanders/l_wasushi/l_wasushi.json",
+"/pa/units/commanders/l_overwatch/l_overwatch.json",
+"/pa/units/commanders/l_cyclops/l_cyclops.json",
+"/pa/units/commanders/l_cataphract/l_cataphract.json",
+"/pa/units/commanders/l_raptor/l_raptor.json",
+"/pa/units/commanders/l_quad/l_quad.json",
+"/pa/units/commanders/l_tank/l_tank.json",
   "/pa/units/assimilation/commanders/a_not_armalisk/a_not_armalisk.json",
   "/pa/units/assimilation/commanders/a_quad_donut_duke/a_quad_donut_duke.json",
   "/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json"
@@ -24,8 +31,11 @@ commandersToRemove = ["/pa/units/commanders/bug_commander/bug_commander.json",
 
 commanderImageMap = {
   "/pa/units/commanders/bug_commander/bug_commander.json":"coui://pa/units/commanders/bug_commander/profile_bug.png",
+  "/pa/units/commanders/l_cataphract/l_cataphract.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cataphract.png",
+  "/pa/units/commanders/l_raptor/l_raptor.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_raptor.png",
+  "/pa/units/commanders/l_quad/l_quad.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_quad.png",
+  "/pa/units/commanders/l_tank/l_tank.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_tank.png",
   "/pa/units/commanders/l_overwatch/l_overwatch.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_overwatch.png",
-  "/pa/units/commanders/l_rockteeth/l_rockteeth.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_rockteeth.png", 
   "/pa/units/commanders/l_cyclops/l_cyclops.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cyclops.png", 
   "/pa/units/commanders/l_wasushi/l_wasushi.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_wasushi.png",
   "/pa/units/assimilation/commanders/a_not_armalisk/a_not_armalisk.json":"coui://ui/main/shared/img/commanders/profiles/profile_quad_not_armalisk.png",
