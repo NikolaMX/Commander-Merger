@@ -1,5 +1,6 @@
 {
     "commanders": [
+        "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json",
         "/pa/units/commanders/bug_commander/bug_commander.json",
         "/pa/units/commanders/l_overwatch/l_overwatch.json",
         "/pa/units/commanders/l_cyclops/l_cyclops.json",
