@@ -35,7 +35,7 @@ commandersToRemove = [
 ]
 
 commanderImageMap = {
-  "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json":"/pa/units/commanders/replicate_commander_1/profile_rep_1.png",
+  "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json":"coui://pa/units/commanders/replicate_commander_1/profile_rep_1.png",
   "/pa/units/commanders/bug_commander/bug_commander.json":"coui://pa/units/commanders/bug_commander/profile_bug.png",
   "/pa/units/commanders/l_cataphract/l_cataphract.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cataphract.png",
   "/pa/units/commanders/l_raptor/l_raptor.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_raptor.png",
@@ -58,7 +58,6 @@ modsPromise.then(function(result){ // setting which commanders to add
   for(modIndex in result){
     var modObject =  result[modIndex];
     if(modObject.identifier == "com.pa.ferretmaster.bugs" || modObject.identifier == "com.pa.ferretmaster.bugs-dev"){bugsEnabled = true}
-    console.log(modObject.identifier)
     if(modCommanders[modObject.identifier] !== undefined){
       commandersToKeep = commandersToKeep.concat(modCommanders[modObject.identifier]);
     }
