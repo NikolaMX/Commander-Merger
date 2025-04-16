@@ -8,6 +8,8 @@ var bugCommanders = ["/pa/units/commanders/bug_commander/bug_commander.json"]
 
 var replicateCommanders = ["/pa/units/commanders/replicate_commander_1/replicate_commander_1.json"]
 
+var exileCommanders = ["/pa/units/commanders/exiles_blueberry/union_formidable.json"]
+
 //matches mod identifiers with commanders to add to the list
 var modCommanders = {
     "com.pa.ferretmaster.bugs": bugCommanders,
@@ -15,12 +17,15 @@ var modCommanders = {
     "com.pa.legion-expansion-server": legionCommanders,
     "com.pa.legion-expansion-server-dev": legionCommanders,
     "pa.mla.unit.replicate": replicateCommanders,
+    "com.pa.nik.exiles":exileCommanders,
+    "com.pa.nik.exiles_dev":exileCommanders,
     "com.pa.assimilation-expansion-server": ["/pa/units/assimilation/commanders/a_not_armalisk/a_not_armalisk.json","/pa/units/assimilation/commanders/a_quad_donut_duke/a_quad_donut_duke.json"],
     "com.pa.ferretmaster.scenario-server-local":["/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json","/pa/units/commanders/scenario_invincible_com/scenario_invincible_com.json"],
     "com.pa.ferretmaster.scenario-server":["/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json"]
 }
 
 commandersToRemove = [
+"/pa/units/commanders/exiles_blueberry/union_formidable.json",
 "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json",
 "/pa/units/commanders/bug_commander/bug_commander.json",
 "/pa/units/commanders/l_overwatch/l_overwatch.json",
@@ -35,6 +40,7 @@ commandersToRemove = [
 ]
 
 commanderImageMap = {
+  "/pa/units/commanders/exiles_blueberry/union_formidable.json": "coui://pa/units/commanders/exiles_blueberry/profile_union_formidable.png",
   "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json":"coui://pa/units/commanders/replicate_commander_1/profile_rep_1.png",
   "/pa/units/commanders/bug_commander/bug_commander.json":"coui://pa/units/commanders/bug_commander/profile_bug.png",
   "/pa/units/commanders/l_cataphract/l_cataphract.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cataphract.png",

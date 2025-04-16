@@ -9,7 +9,7 @@ var assimCommanders = [
 ]
 
 var legion = {};
-
+var exileCommanders = ["/pa/units/commanders/exiles_blueberry/union_formidable.json"]
 legion.commanders = [
   "/pa/units/commanders/l_overwatch/l_overwatch.json",
   "/pa/units/commanders/l_cyclops/l_cyclops.json",
