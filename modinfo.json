@@ -10,7 +10,7 @@
   "date": "2025-05-30",
   "icon": "https://github.com/Ferret-Master/Commander-Merger/blob/main/Faction_Merger.png?raw=true",
   "signature": "not yet implemented",
-  "priority": 88,
+  "priority": 90,
   "scenes": {
     "new_game": [
       "coui://ui/mods/commander_merge/new_game/commander-merge.js",
