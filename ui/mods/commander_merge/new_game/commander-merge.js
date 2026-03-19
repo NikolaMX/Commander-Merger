@@ -9,7 +9,9 @@ var bugCommanders = ["/pa/units/commanders/bug_commander/bug_commander.json"]
 var replicateCommanders = ["/pa/units/commanders/replicate_commander_1/replicate_commander_1.json"]
 
 var exileCommanders = ["/pa/units/commanders/exiles_blueberry/union_formidable.json",
-  "/pa/units/commanders/exiles_maxim/exiles_maxim.json"
+  "/pa/units/commanders/exiles_maxim/exiles_maxim.json",
+  "/pa/units/commanders/exiles_brainiac/exiles_brainiac.json"
+
 ]
 
 //matches mod identifiers with commanders to add to the list
@@ -28,6 +30,8 @@ var modCommanders = {
 
 commandersToRemove = [
 "/pa/units/commanders/exiles_blueberry/union_formidable.json",
+ "/pa/units/commanders/exiles_maxim/exiles_maxim.json",
+"/pa/units/commanders/exiles_brainiac/exiles_brainiac.json",
 "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json",
 "/pa/units/commanders/bug_commander/bug_commander.json",
 "/pa/units/commanders/l_overwatch/l_overwatch.json",
