@@ -45,6 +45,8 @@ commandersToRemove = [
 "/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json"
 ]
 
+var trackedFactionCommanders = commandersToRemove.slice();
+
 commanderImageMap = {
   "/pa/units/commanders/exiles_blueberry/union_formidable.json": "coui://pa/units/commanders/exiles_blueberry/profile_union_formidable.png",
   "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json":"coui://pa/units/commanders/replicate_commander_1/profile_rep_1.png",
@@ -76,6 +78,7 @@ modsPromise.then(function(result){ // setting which commanders to add
   }
   if(bugsEnabled){model.localChatMessage(loc("Bug Faction"),loc("To play as the Bugs select one of the green Commanders."))}
   commandersToRemove = _.difference(commandersToRemove,commandersToKeep);
+  filterUnsupportedCommanders(commandersToKeep);
   for(comIndex in commandersToRemove){
     var commanderImage = commanderImageMap[commandersToRemove[comIndex]];
   
@@ -92,6 +95,40 @@ modsPromise.then(function(result){ // setting which commanders to add
 })
 function wipeCommanderFromList(commanderImage){
   $('img[src="'+commanderImage+'"]').parent().remove()
+}
+
+function filterUnsupportedCommanders(commandersToKeep) {
+  var allowedFactionCommanders = {};
+  _.forEach(commandersToKeep, function(commander) {
+    allowedFactionCommanders[commander] = true;
+  });
+
+  function isAllowedCommander(commander) {
+    return !_.includes(trackedFactionCommanders, commander) || allowedFactionCommanders[commander];
+  }
+
+  function filterObservable(observable) {
+    if (!_.isFunction(observable)) {
+      return;
+    }
+
+    var currentCommanders = observable();
+    if (!_.isArray(currentCommanders) || !currentCommanders.length) {
+      return;
+    }
+
+    observable(_.filter(currentCommanders, isAllowedCommander));
+  }
+
+  filterObservable(model.commanders);
+  filterObservable(model.aiCommanders);
+
+  if (_.isFunction(model.commanders) && _.isFunction(model.selectedCommander) && _.isFunction(model.selectedCommanderIndex)) {
+    var selectedCommander = model.selectedCommander();
+    if (selectedCommander && !isAllowedCommander(selectedCommander)) {
+      model.selectedCommanderIndex(-1);
+    }
+  }
 }
 
 
