@@ -59,7 +59,6 @@ commanderImageMap = {
   "/pa/units/commanders/l_tank/l_tank.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_tank.png",
   "/pa/units/commanders/l_overwatch/l_overwatch.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_overwatch.png",
   "/pa/units/commanders/l_cyclops/l_cyclops.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cyclops.png", 
-  "/pa/units/commanders/l_wasushi/l_wasushi.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_wasushi.png",
   "/pa/units/assimilation/commanders/a_not_armalisk/a_not_armalisk.json":"coui://ui/main/shared/img/commanders/profiles/profile_quad_not_armalisk.png",
   "/pa/units/assimilation/commanders/a_quad_donut_duke/a_quad_donut_duke.json":"coui://ui/main/shared/img/commanders/profiles/profile_quad_donut_duke.png",
   "/pa/units/commanders/scenario_ai_invincible_com/scenario_ai_invincible_com.json":"coui://pa/units/commanders/scenario_ai_invincible_com/profile_bug.png"
@@ -79,26 +78,23 @@ modsPromise.then(function(result){ // setting which commanders to add
     }
   }
   if(bugsEnabled){model.localChatMessage(loc("Bug Faction"),loc("To play as the Bugs select one of the green Commanders."))}
-  commandersToRemove = _.difference(commandersToRemove,commandersToKeep);
-  filterUnsupportedCommanders(commandersToKeep);
-  for(comIndex in commandersToRemove){
-    var commanderImage = commanderImageMap[commandersToRemove[comIndex]];
-  
-    if(commanderImage !== undefined){
 
-      _.delay(wipeCommanderFromList,500,commanderImage)
+  var applyFilter = function () { filterUnsupportedCommanders(commandersToKeep); };
 
-      
-    }
+  // Apply now (the commander list may already be loaded)...
+  applyFilter();
+  // ...again whenever the engine (re)loads the commander list...
+  if (typeof CommanderUtility !== "undefined" && _.isFunction(CommanderUtility.afterCommandersLoaded)) {
+    CommanderUtility.afterCommandersLoaded(applyFilter);
+  }
+  // ...and if the lobby repopulates the observable later.
+  if (_.isFunction(model.commanders) && _.isFunction(model.commanders.subscribe)) {
+    model.commanders.subscribe(applyFilter);
   }
 
 })
 
 })
-function wipeCommanderFromList(commanderImage){
-  $('img[src="'+commanderImage+'"]').parent().remove()
-}
-
 function filterUnsupportedCommanders(commandersToKeep) {
   var allowedFactionCommanders = {};
   _.forEach(commandersToKeep, function(commander) {
@@ -119,7 +115,12 @@ function filterUnsupportedCommanders(commandersToKeep) {
       return;
     }
 
-    observable(_.filter(currentCommanders, isAllowedCommander));
+    var filteredCommanders = _.filter(currentCommanders, isAllowedCommander);
+    // Only write when something changed, so re-running from the observable's
+    // own subscription can't trigger an endless update loop.
+    if (filteredCommanders.length !== currentCommanders.length) {
+      observable(filteredCommanders);
+    }
   }
 
   filterObservable(model.commanders);
@@ -129,6 +130,11 @@ function filterUnsupportedCommanders(commandersToKeep) {
     var selectedCommander = model.selectedCommander();
     if (selectedCommander && !isAllowedCommander(selectedCommander)) {
       model.selectedCommanderIndex(-1);
+      // selectedCommander() now resolves to an allowed fallback; notify the
+      // server so its slot state doesn't keep the unsupported commander.
+      if (_.isFunction(model.send_message) && !(_.isFunction(model.thisPlayerIsReady) && model.thisPlayerIsReady())) {
+        model.send_message('update_commander', { commander: model.selectedCommander() });
+      }
     }
   }
 }
