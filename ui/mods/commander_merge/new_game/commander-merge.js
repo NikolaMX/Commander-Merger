@@ -8,7 +8,7 @@ var bugCommanders = ["/pa/units/commanders/bug_commander/bug_commander.json"]
 
 var replicateCommanders = ["/pa/units/commanders/replicate_commander_1/replicate_commander_1.json"]
 
-var exileCommanders = ["/pa/units/commanders/exiles_blueberry/union_formidable.json",
+var exileCommanders = ["/pa/units/commanders/exiles_blueberry/exiles_blueberry.json",
   "/pa/units/commanders/exiles_maxim/exiles_maxim.json",
   "/pa/units/commanders/exiles_brainiac/exiles_brainiac.json",
   "/pa/units/commanders/exiles_taurus/exiles_taurus.json"
@@ -30,7 +30,7 @@ var modCommanders = {
 }
 
 commandersToRemove = [
-"/pa/units/commanders/exiles_blueberry/union_formidable.json",
+"/pa/units/commanders/exiles_blueberry/exiles_blueberry.json",
  "/pa/units/commanders/exiles_maxim/exiles_maxim.json",
 "/pa/units/commanders/exiles_brainiac/exiles_brainiac.json",
 "/pa/units/commanders/exiles_taurus/exiles_taurus.json",
@@ -50,7 +50,7 @@ commandersToRemove = [
 var trackedFactionCommanders = commandersToRemove.slice();
 
 commanderImageMap = {
-  "/pa/units/commanders/exiles_blueberry/union_formidable.json": "coui://pa/units/commanders/exiles_blueberry/profile_union_formidable.png",
+  "/pa/units/commanders/exiles_blueberry/exiles_blueberry.json": "coui://pa/units/commanders/exiles_blueberry/profile_exiles_blueberry.png",
   "/pa/units/commanders/replicate_commander_1/replicate_commander_1.json":"coui://pa/units/commanders/replicate_commander_1/profile_rep_1.png",
   "/pa/units/commanders/bug_commander/bug_commander.json":"coui://pa/units/commanders/bug_commander/profile_bug.png",
   "/pa/units/commanders/l_cataphract/l_cataphract.json":"coui://ui/main/shared/img/commanders/profiles/profile_l_cataphract.png",
