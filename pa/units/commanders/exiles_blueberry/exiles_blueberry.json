@@ -5,7 +5,7 @@
         "advanced": "ExilesAdvancedMetalExtractor"
     },
     "display_name": "Blueberry Commander",
-    "si_name": "replicate_commander_1",
+    "si_name": "exiles_blueberry",
     "description": "Basic Tiha Commander.",
     "model": {
         "filename": "/pa/units/commanders/exiles_blueberry/formidable.papa",
